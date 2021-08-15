@@ -1,1 +1,11 @@
 -------------------------  WELCOME TO ADDRESS_BOOK_SERVICE ------------------
+
+--------------------- #UC1
+
+mysql> CREATE DATABASE AddressBookService;
+Query OK, 1 row affected (0.13 sec)
+
+mysql> USE AddressBookService;
+Database changed
+
+
