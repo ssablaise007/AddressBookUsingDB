@@ -38,3 +38,44 @@ mysql> DESCRIBE AddressBookService;
 | email    | varchar(30)  | NO   |     | NULL    |       |
 +----------+--------------+------+-----+---------+-------+
 8 rows in set (0.03 sec)
+
+
+
+------------------------ #UC3
+
+mysql> ALTER TABLE AddressBookService ADD contact VARCHAR(20) NOT NULL ;
+Query OK, 0 rows affected (1.41 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE AddressBookService;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| first    | varchar(10)  | NO   | PRI | NULL    |       |
+| lastname | varchar(15)  | NO   |     | NULL    |       |
+| address  | varchar(100) | NO   |     | NULL    |       |
+| city     | char(15)     | NO   |     | NULL    |       |
+| state    | char(20)     | NO   |     | NULL    |       |
+| zip      | int          | NO   |     | NULL    |       |
+| phone    | int          | NO   |     | NULL    |       |
+| email    | varchar(30)  | NO   |     | NULL    |       |
+| contact  | varchar(20)  | NO   |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+9 rows in set (0.08 sec)
+
+mysql> INSERT INTO AddressBookService(first, lastname, address, city, state, zip, phone, email, contact) VALUES
+    -> ( 'BERNARD', 'ARNAULT', 'CANADA', 'OHIO', 'US', 1014, 2568978, 'BERNARD@BVLGARI.COM','SELF'),
+    -> ( 'WARREN', 'BUFFET', 'GEORGIA', 'ATLANTA', 'US', 1990, 25610508, 'BUFFET@BERKSHIRE.COM','FRIEND'),
+    -> ( 'RICHARD', 'BRANSON', 'TEXAS', 'AUSTIN', 'US', 2002, 25470608, 'RICHARD@VIRGIN.COM','FRIEND');
+Query OK, 3 rows affected (0.20 sec)
+
+mysql> SELECT * FROM AddressBookService;
++---------+----------+----------+---------+-------+------+----------+------------------------+---------+
+| first   | lastname | address  | city    | state | zip  | phone    | email                  | contact |
++---------+----------+----------+---------+-------+------+----------+------------------------+---------+
+| BERNARD | ARNAULT  | CANADA   | OHIO    | US    | 1014 |  2568978 | BERNARD@BVLGARI.COM    | SELF    |
+| ELON    | MUSK     | AUCKLAND | NEWYORK | US    | 2014 | 25678978 | ELON@BORINGCOMPANY.COM | FRIEND  |
+| RICHARD | BRANSON  | TEXAS    | AUSTIN  | US    | 2002 | 25470608 | RICHARD@VIRGIN.COM     | FRIEND  |
+| WARREN  | BUFFET   | GEORGIA  | ATLANTA | US    | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   | FRIEND  |
++---------+----------+----------+---------+-------+------+----------+------------------------+---------+
+4 rows in set (0.00 sec)
