@@ -99,6 +99,23 @@ mysql> SELECT * FROM addressbookservice;
 | WARREN  | BUFFET   | GEORGIA    | ATLANTA   | US         | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   |
 +---------+----------+------------+-----------+------------+------+----------+------------------------+
 6 rows in set (0.00 sec)
+
+---------------------------------- #UC6
+
+mysql> SELECT first,city FROM addressbookservice ORDER BY (first);
++---------+---------+
+| first   | city    |
++---------+---------+
+| BERNARD | OHIO    |
+| ELON    | NEWYORK |
+| RATAN   | MUMBAI  |
+| RICHARD | AUSTIN  |
+| WARREN  | ATLANTA |
++---------+---------+
+5 rows in set (0.00 sec)
+
+
+
   
 ----------------------------- #UC5
 
