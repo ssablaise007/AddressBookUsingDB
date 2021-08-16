@@ -79,3 +79,25 @@ mysql> SELECT * FROM AddressBookService;
 | WARREN  | BUFFET   | GEORGIA  | ATLANTA | US    | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   | FRIEND  |
 +---------+----------+----------+---------+-------+------+----------+------------------------+---------+
 4 rows in set (0.00 sec)
+
+
+---------------------------- #UC4
+
+mysql> update addressbookservice set address = 'COLUMBUS' where first = 'BERNARD';
+Query OK, 1 row affected (0.21 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbookservice;
++---------+----------+----------+---------+-------+------+----------+------------------------+
+| first   | lastname | address  | city    | state | zip  | phone    | email                  |
++---------+----------+----------+---------+-------+------+----------+------------------------+
+| BERNARD | ARNAULT  | COLUMBUS | OHIO    | US    | 1014 |  2568978 | BERNARD@BVLGARI.COM    |
+| ELON    | MUSK     | AUCKLAND | NEWYORK | US    | 2014 | 25678978 | ELON@BORINGCOMPANY.COM |
+| RICHARD | BRANSON  | TEXAS    | AUSTIN  | US    | 2002 | 25470608 | RICHARD@VIRGIN.COM     |
+| WARREN  | BUFFET   | GEORGIA  | ATLANTA | US    | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   |
++---------+----------+----------+---------+-------+------+----------+------------------------+
+4 rows in set (0.02 sec)
+  
+
+
+
