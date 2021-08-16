@@ -88,16 +88,21 @@ Query OK, 1 row affected (0.21 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> SELECT * FROM addressbookservice;
-+---------+----------+----------+---------+-------+------+----------+------------------------+
-| first   | lastname | address  | city    | state | zip  | phone    | email                  |
-+---------+----------+----------+---------+-------+------+----------+------------------------+
-| BERNARD | ARNAULT  | COLUMBUS | OHIO    | US    | 1014 |  2568978 | BERNARD@BVLGARI.COM    |
-| ELON    | MUSK     | AUCKLAND | NEWYORK | US    | 2014 | 25678978 | ELON@BORINGCOMPANY.COM |
-| RICHARD | BRANSON  | TEXAS    | AUSTIN  | US    | 2002 | 25470608 | RICHARD@VIRGIN.COM     |
-| WARREN  | BUFFET   | GEORGIA  | ATLANTA | US    | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   |
-+---------+----------+----------+---------+-------+------+----------+------------------------+
-4 rows in set (0.02 sec)
++---------+----------+------------+-----------+------------+------+----------+------------------------+
+| first   | lastname | address    | city      | state      | zip  | phone    | email                  |
++---------+----------+------------+-----------+------------+------+----------+------------------------+
+| BERNARD | ARNAULT  | COLUMBUS   | OHIO      | US         | 1014 |  2568978 | BERNARD@BVLGARI.COM    |
+| ELON    | MUSK     | AUCKLAND   | NEWYORK   | US         | 2014 | 25678978 | ELON@BORINGCOMPANY.COM |
+| GAUTAM  | ADANI    | ZIROVALLEY | AHMEDABAD | GUJARAT    |  420 |   615820 | GAUTAM@ADANIPOWER.COM  |
+| RATAN   | TATA     | SANTACRUZ  | MUMBAI    | MAHARASTRA |  509 |   517903 | ratan@tataelxi.COM     |
+| RICHARD | BRANSON  | TEXAS      | AUSTIN    | US         | 2002 | 25470608 | RICHARD@VIRGIN.COM     |
+| WARREN  | BUFFET   | GEORGIA    | ATLANTA   | US         | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   |
++---------+----------+------------+-----------+------------+------+----------+------------------------+
+6 rows in set (0.00 sec)
   
+----------------------------- #UC5
 
+mysql> DELETE FROM addressbookservice WHERE first = 'GAUTAM';
+Query OK, 1 row affected (0.30 sec)
 
 
