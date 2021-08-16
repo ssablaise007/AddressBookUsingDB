@@ -114,6 +114,15 @@ mysql> SELECT first,city FROM addressbookservice ORDER BY (first);
 +---------+---------+
 5 rows in set (0.00 sec)
 
+---------------------------------------  #UC7
+
+mysql> SELECT COUNT(city) FROM addressbookservice;
++-------------+
+| COUNT(city) |
++-------------+
+|           5 |
++-------------+
+1 row in set (0.04 sec)
 
 
   
