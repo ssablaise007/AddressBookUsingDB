@@ -100,6 +100,14 @@ mysql> SELECT * FROM addressbookservice;
 +---------+----------+------------+-----------+------------+------+----------+------------------------+
 6 rows in set (0.00 sec)
 
+  
+----------------------------- #UC5
+
+mysql> DELETE FROM addressbookservice WHERE first = 'GAUTAM';
+Query OK, 1 row affected (0.30 sec)
+
+
+
 ---------------------------------- #UC6
 
 mysql> SELECT first,city FROM addressbookservice ORDER BY (first);
@@ -125,10 +133,16 @@ mysql> SELECT COUNT(city) FROM addressbookservice;
 1 row in set (0.04 sec)
 
 
-  
------------------------------ #UC5
+---------------------------------------- #UC8
 
-mysql> DELETE FROM addressbookservice WHERE first = 'GAUTAM';
-Query OK, 1 row affected (0.30 sec)
-
-
+mysql> SELECT first, city FROM addressbookservice ORDER BY (first);
++---------+---------+
+| first   | city    |
++---------+---------+
+| BERNARD | OHIO    |
+| ELON    | NEWYORK |
+| RATAN   | MUMBAI  |
+| RICHARD | AUSTIN  |
+| WARREN  | ATLANTA |
++---------+---------+
+5 rows in set (0.00 sec)
