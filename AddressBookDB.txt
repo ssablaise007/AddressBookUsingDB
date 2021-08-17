@@ -146,3 +146,29 @@ mysql> SELECT first, city FROM addressbookservice ORDER BY (first);
 | WARREN  | ATLANTA |
 +---------+---------+
 5 rows in set (0.00 sec)
+
+
+---------------------------------------- #UC9
+mysql> ALTER TABLE addressbookservice ADD COLUMN relation VARCHAR(8);
+Query OK, 0 rows affected (3.18 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE addressbookservice SET relation = 'FAMILY' WHERE first = 'ELON';
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbookservice SET relation = 'FRIENDS' WHERE first = 'RICHARD';
+Query OK, 1 row affected (0.11 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM ADDRESSBOOKSERVICE;
++---------+----------+-----------+---------+------------+------+----------+------------------------+----------+
+| first   | lastname | address   | city    | state      | zip  | phone    | email                  | relation |
++---------+----------+-----------+---------+------------+------+----------+------------------------+----------+
+| BERNARD | ARNAULT  | COLUMBUS  | OHIO    | US         | 1014 |  2568978 | BERNARD@BVLGARI.COM    | FRIENDS  |
+| ELON    | MUSK     | AUCKLAND  | NEWYORK | US         | 2014 | 25678978 | ELON@BORINGCOMPANY.COM | FAMILY   |
+| RATAN   | TATA     | SANTACRUZ | MUMBAI  | MAHARASTRA |  509 |   517903 | ratan@tataelxi.COM     | FAMILY   |
+| RICHARD | BRANSON  | TEXAS     | AUSTIN  | US         | 2002 | 25470608 | RICHARD@VIRGIN.COM     | FRIENDS  |
+| WARREN  | BUFFET   | GEORGIA   | ATLANTA | US         | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   | FRIENDS  |
++---------+----------+-----------+---------+------------+------+----------+------------------------+----------+
+5 rows in set (0.00 sec)
