@@ -149,6 +149,7 @@ mysql> SELECT first, city FROM addressbookservice ORDER BY (first);
 
 
 ---------------------------------------- #UC9
+
 mysql> ALTER TABLE addressbookservice ADD COLUMN relation VARCHAR(8);
 Query OK, 0 rows affected (3.18 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -172,3 +173,16 @@ mysql> SELECT * FROM ADDRESSBOOKSERVICE;
 | WARREN  | BUFFET   | GEORGIA   | ATLANTA | US         | 1990 | 25610508 | BUFFET@BERKSHIRE.COM   | FRIENDS  |
 +---------+----------+-----------+---------+------------+------+----------+------------------------+----------+
 5 rows in set (0.00 sec)
+
+
+---------------------------------------- #UC10
+
+mysql> SELECT COUNT(relation) FROM addressbookservice;
++-----------------+
+| COUNT(relation) |
++-----------------+
+|               5 |
++-----------------+
+1 row in set (0.03 sec)
+
+
